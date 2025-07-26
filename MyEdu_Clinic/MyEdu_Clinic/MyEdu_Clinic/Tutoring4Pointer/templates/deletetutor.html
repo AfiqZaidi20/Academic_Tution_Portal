@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+    <title>Register Page</title>
+    <style type="text/css">
+        body{
+			background-color: #F0F8FF;
+			margin: 0;
+			background-size: cover;
+			background-position-y: 100px;
+			height: 100vh;
+		}
+        #header1{
+			background-color: rgba(160, 30, 30, 0.959);
+            display: flex;
+			align-items: center;
+            height: 15px;
+        }
+        #header2{
+			background-color: rgba(223, 223, 223, 0.573);
+			display: flex;
+			align-items: center;
+			padding: 20px;
+			height: 60px;
+            margin: 0px ;
+			text-align: right;
+		}
+        #logo1{
+			width: 98px;
+			height: 93px;
+			margin: 0px 0px;
+		}
+		h1{
+			text-align: center;
+			margin: 0 10px;
+		}
+		nav{
+			margin-left: auto;
+		}
+        nav a:hover {
+            color: #cd4444;
+        }
+		nav a{
+			margin: 0 15px;
+			text-decoration: none;
+			color: black;
+		}
+
+		/*footer*/
+		.footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: lightgray;
+        }
+
+        .footer div {
+            width: 43%;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .footer a {
+            display: block;
+            color: black;
+            margin: 8px 0;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #f0a500;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        .footer .icons img {
+            width: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header1">
+        <h1>&#x200E;</h1>
+    </header>
+
+    <header id="header2">
+        {% load static %}<img src="{% static 'LogoKPM.png' %}" id="logo1">
+        <h1>Tutoring 4Pointer</h1>
+		<nav>
+			<ul>
+				<a href="{% url 'home' %}">Home</a>
+		        <a href="{% url 'studentlogin' %}">Student Login</a>
+		        <a href="{% url 'tutorlogin' %}">Tutor Login</a>
+			</ul> 
+	    </nav>
+    </header>
+
+	<header id="header1">
+        <h1>&#x200E;</h1>
+    </header>
+
+	<p>
+        <form action="viewdeletedata/{{deleteid.tutorid}}" method="delete">
+            {% csrf_token %}
+            <h3> Enter tutor id: </h3>
+            <input type="text" name="tutorid" value="{{deleteid.tutorid}}" disabled="false"><br>
+            <h3> Enter tutor name: </h3>
+            <input type="text" name="tutorname" value="{{deleteid.tutorname}}" disabled="false"><br>
+            <h3> Enter tutor phone number: </h3>
+            <input type="text" name="tutorno" value="{{deleteid.tutorno}}" disabled="false"><br>
+            <br>
+            <input type="submit" value="DELETE">
+        </form>
+    </p>
+
+
+	<footer class="footer">
+        <div class="contact-info">
+            <h3>CONTACT US</h3>
+            <p>Kolej Profesional MARA Beranang,<br>Lot 2333 Jalan Kajang Seremban,<br>43700 Beranang, Selangor, Malaysia</p>
+            <p>Operation Hour:<br>8.00 am - 5.30 pm</p>
+            <p>Break:<br>1.00 - 2.00 pm (Monday-Thursday)<br>12.15 am - 2.45 pm (Friday)</p>
+            <p>Close: Saturday, Sunday & Public Holiday</p>
+            <p><i class="fas fa-phone"></i> +6 (03) 876 68935 / 36</p>
+            <p><i class="fas fa-fax"></i> +6 (03) 876 68940</p>
+            <p><i class="fas fa-envelope"></i> info@beranang.kpm.edu.my</p>
+        </div>
+
+        <div>
+            <h3>ABOUT US</h3>
+            <a href="#">About Us</a>
+			<a href="">Contact Us</a>
+        </div>
+
+        <div>
+            <h3>QUICK LINK</h3>
+            <a href="#">MARA Offical Website</a>
+            <a href="#">Malaysian Qualification Agency</a>
+            <a href="#">MARA Quality System</a>
+            <a href="#">FAQ</a>
+        </div>
+    </footer>
+    <br>
+
+    <h1>© Copyright KPMB 2024. Design & Development by UNIT IT</h1>
+    <br><br><br> 
+
+</body>
+</html>
